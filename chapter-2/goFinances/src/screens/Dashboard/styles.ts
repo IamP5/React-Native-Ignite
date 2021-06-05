@@ -94,6 +94,12 @@ export const Title = styled.Text`
     margin-bottom: 16px;
 `;
 
+export const LoadContainer = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const TransactionList = styled(
     FlatList as new () => FlatList<DataListProps>
     ).attrs({
@@ -103,5 +109,7 @@ export const TransactionList = styled(
         paddingBottom: getBottomSpace()
     }
 })``;
+
+
 
 
