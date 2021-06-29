@@ -7,7 +7,6 @@ import { useTheme } from 'styled-components';
 import {
   Container,
 } from './styles';
-import { color } from 'react-native-reanimated';
 
 interface Props extends BorderlessButtonProps{
   color?: string;
