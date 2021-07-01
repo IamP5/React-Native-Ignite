@@ -3,6 +3,7 @@ import React from 'react';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Acessory } from '../../components/Acessory';
+import { Button } from '../../components/Button';
 
 import SpeedSvg from '../../assets/speed.svg';
 import AccelerationSvg from '../../assets/acceleration.svg';
@@ -27,8 +28,10 @@ import {
   Price,
   About,
   Acessories,
+  Footer,
 
 } from './styles';
+import theme from '../../styles/theme';
 
 export function CarDetails(){
   return (
@@ -68,8 +71,11 @@ export function CarDetails(){
           touro de lide indultado na praça Real Maestranza de Sevilla.
           É um belíssimo carro para quem gosta de acelerar.
         </About>
-
       </Content>
+
+      <Footer>
+        <Button title="Confirmar"/>
+      </Footer>
 
     </Container>
   );
