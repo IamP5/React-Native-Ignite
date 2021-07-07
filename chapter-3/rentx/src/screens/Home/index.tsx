@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -16,6 +17,8 @@ import {
 
 
 export function Home(){
+  const navigation = useNavigation();
+
   //from Car component Props
   const carData = {
     brand: 'Audi',
@@ -25,6 +28,10 @@ export function Home(){
       price: 120
     },
     thumbnail: 'https://beta.alpes.one/storage/app/uploads/public/5f1/58b/578/5f158b57828a1446732254.png'
+  }
+
+  function handleCarDetails() {
+    navigation.navigate('CarDetails');
   }
 
   return (
@@ -49,7 +56,8 @@ export function Home(){
       <CarList 
         data={[1,2,3,4,5,6,7]}
         keyExtractor={item => String(item)}
-        renderItem={({ item }) => <Car data={carData}/>}
+        renderItem={({ item }) => 
+          <Car data={carData} onPress={handleCarDetails}/>}
       />
     </Container>
   );
