@@ -25,19 +25,8 @@ export function Home(){
   const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
 
-  //from Car component Props
-  const carData = {
-    brand: 'Audi',
-    name: 'RS 5 Coupé',
-    rent: {
-      period: 'AO DIA',
-      price: 120
-    },
-    thumbnail: 'https://beta.alpes.one/storage/app/uploads/public/5f1/58b/578/5f158b57828a1446732254.png'
-  }
-
-  function handleCarDetails() {
-    navigation.navigate('CarDetails');
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate('CarDetails', { car });
   }
 
   useEffect(() => {
@@ -78,7 +67,7 @@ export function Home(){
           data={cars}
           keyExtractor={item => item.id}
           renderItem={({ item }) => 
-            <Car data={item} onPress={handleCarDetails}/>}
+            <Car data={item} onPress={() => handleCarDetails(item)}/>}
         />
       } 
     </Container>
