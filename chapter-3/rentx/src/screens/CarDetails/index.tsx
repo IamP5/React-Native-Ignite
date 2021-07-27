@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
-import { Acessory } from '../../components/Acessory';
+import { Accessory } from '../../components/Accessory';
 import { Button } from '../../components/Button';
 
 import { CarDTO } from '../../dtos/CarDTO';
@@ -72,10 +72,11 @@ export function CarDetails(){
         <Accessories>
           {
             car.accessories.map(accessory => (
-              <Acessory 
+              <Accessory 
                 key={accessory.type}
                 name={accessory.name} 
-                icon={getAcessoryIcon(accessory.type)}/>
+                icon={getAcessoryIcon(accessory.type)}
+              />
             ))
           }
         </Accessories>
